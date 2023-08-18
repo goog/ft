@@ -42,3 +42,12 @@ with open('sentence1-10000.json', 'r') as file, open('file2.json', 'w') as wrfil
 
     print("all lines count:", count)
 ```
+
+微调了一个古诗句的接龙  效果还可以见 https://huggingface.co/googcheng/7b-lora  
+1 经典的古诗句拆分成alpaca格式(file3.json)  
+2 训练大概10 epoch loss才可以很小  
+3 测试  
+
+```python
+python src/cli_demo.py     --model_name_or_path baichuan-inc/Baichuan-7B     --template default     --finetuning_type lora     --checkpoint_dir path_to_sft_checkpoint/
+```
